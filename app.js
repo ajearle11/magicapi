@@ -10,14 +10,18 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", async (req, res) => {
+  res.send({
+    message:
+      "Hello. Welcome to the MTG Lords of the Rings: Tales of Middle-Earth LTR card api! You can find images of your favourite cards. /cards will show all the cards. /cards/search/{query} will search by your query. /cards/id/{query} will find a card by its number",
+  });
+});
+
+app.get("/cards", async (req, res) => {
   res.send(cards);
 });
 
-app.get("/search/:name", async (req, res) => {
+app.get("/cards/search/:name", async (req, res) => {
   const { name } = req.params;
-  // const card = cards.filter((cardP) => {
-  //   return name.toLowerCase() == cardP.name.toLowerCase();
-  // });
   const arr = [];
   const card = cards.forEach((card) => {
     if (card.name.toLowerCase().includes(name.toLowerCase())) {
@@ -27,7 +31,7 @@ app.get("/search/:name", async (req, res) => {
   res.send(arr);
 });
 
-app.get("/id/:id", async (req, res) => {
+app.get("/cards/id/:id", async (req, res) => {
   const { id } = req.params;
   const card = cards.filter((cardP) => {
     return parseInt(id) == cardP.id;
