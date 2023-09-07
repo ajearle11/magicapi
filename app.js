@@ -49,8 +49,8 @@ app.get("/cards/search/:name", async (req, res) => {
 app.get("/cards/id/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const card = cards.filter((cardP) => {
-      return parseInt(id) == cardP.id;
+    const card = cards.filter((card) => {
+      return parseInt(id) == card.id;
     });
     card.length === 0
       ? res
@@ -64,7 +64,7 @@ app.get("/cards/id/:id", async (req, res) => {
 
 module.exports = app;
 
-//How we wrote the jason
+//How we wrote the json
 // const response = await fetch(
 //   "https://api.magicthegathering.io/v1/cards?set=ltr&page=5"
 // );
