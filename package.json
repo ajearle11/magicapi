@@ -8,7 +8,7 @@
     "setup-db": "node ./database/setup-db.js",
     "dev": "nodemon -L index.js",
     "coverage": "jest --coverage",
-    "test": "npm run test -- --watchAll=false"
+    "test": "jest -- --watchAll=false"
   },
   "jest": {
     "testEnvironment": "node",
