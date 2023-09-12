@@ -83,3 +83,22 @@ module.exports = app;
 
 // const response = await fetch("./cards.json");
 // const data = await response.json();
+
+//UPDATED THE JSON
+
+// let jsonData = JSON.parse(fs.readFileSync("backup.json"));
+// const response = await fetch(
+//   "https://api.magicthegathering.io/v1/cards?set=ltr&page=5"
+// );
+// const data = await response.json();
+
+// for (x = 0, j = 400; x < 61; x++, j++) {
+//   jsonData[j].rarity = data.cards[x].rarity;
+//   jsonData[j].color = data.cards[x].colorIdentity;
+//   jsonData[j].type = data.cards[x].type;
+//   jsonData[j].text = data.cards[x].text;
+//   jsonData[j].flavorText = data.cards[x].flavor;
+//   jsonData[j].artist = data.cards[x].artist;
+// }
+
+// fs.writeFileSync("backup.json", JSON.stringify(jsonData));
